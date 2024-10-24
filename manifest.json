@@ -5,13 +5,9 @@
   "description": "i hate shorts, so removing it",
   "permissions": ["tabs", "activeTab", "scripting"],
   "host_permissions": ["*://*.youtube.com/*"],
-  "content_scripts": [
-    {
-      "matches": ["*://*.youtube.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_start"
-    }
-  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_icon": "image/blocked.png"
   },
