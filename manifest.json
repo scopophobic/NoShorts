@@ -2,12 +2,18 @@
   "manifest_version": 3,
   "name": "noShort",
   "description": "i hate shorts, so removing it",
-  "permissions": ["webRequest", "webRequestBlocking", "declarativeNetRequest"],
+  "permissions": ["declarativeNetRequest"],
   "version": "1.0",
-  "host_permissions": ["*://*.youtube.com/*"],
-  "background": {
-    "service_worker": "background.js"
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
   },
+  "host_permissions": ["*://*.youtube.com/*"],
   "action": {
     "default_popup": "index.html",
     "default_icon": "image/blocked.png"
